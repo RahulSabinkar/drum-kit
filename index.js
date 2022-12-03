@@ -1,16 +1,19 @@
 document.querySelectorAll(".drum").forEach((item) => {
   item.addEventListener("click", () => {
     var whichButton = item.innerHTML;
-    makeSound(whichButton);
-    buttonAnimation(whichButton);
+    handler(whichButton);
   });
 })
 
 document.addEventListener("keydown", (event) => {
   var whichKey = event.key;
-  makeSound(whichKey);
-  buttonAnimation(whichKey);
+  handler(whichKey);
 })
+
+function handler(whichButton) {
+  makeSound(whichButton);
+  buttonAnimation(whichButton);
+}
 
 function makeSound(whichSound) {
   switch (whichSound) {
